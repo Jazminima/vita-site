@@ -1,15 +1,5 @@
 // Shared JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
     // Mobile menu functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -24,6 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
+        });
+    }
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    if(header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     }
 
@@ -42,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    document.querySelectorAll('.fade-in').forEach(element => {
-        observer.observe(element);
-    });
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(el => observer.observe(el));
 }); 

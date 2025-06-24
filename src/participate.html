@@ -36,38 +36,79 @@
     <section class="installation-steps">
         <div class="container">
             <div class="step">
-                <div class="step-number">1</div>
-                <h3>Download Minima</h3>
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3>Download Minima</h3>
+                </div>
                 <p>Start by installing Minima on your device. Minima is the blockchain platform that enables VITA's sovereignty.</p>
                 
                 <div class="download-links">
                     <div class="download-card">
-                        <h4>Android</h4>
+                        <div class="download-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4>Android</h4>
+                            <a href="https://docs.minima.global/docs/run-a-node/android" target="_blank" rel="noopener" class="help-link" aria-label="Android install help" title="Android install help">&#x24D8;</a>
+                        </div>
                         <p>Run Minima directly on your Android phone</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.minima.android" class="btn" target="_blank" rel="noopener">Download Android App</a>
+                        <div style="display: flex; justify-content: flex-start; align-items: center;">
+                            <a href="https://play.google.com/store/apps/details?id=com.minima.android" class="google-play-btn" target="_blank" rel="noopener">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"/>
+                            </a>
+                        </div>
                     </div>
-                    <div class="download-card">
-                        <h4>Desktop</h4>
-                        <p>Run Minima on Windows, Mac, or Linux</p>
-                        <a href="https://github.com/minima-global/Minima/raw/refs/heads/master/jar/minima.jar" class="btn" target="_blank" rel="noopener">Download Desktop Version</a>
+                    <div class="download-card desktop-card">
+                        <div class="download-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4>Desktop</h4>
+                            <a href="https://docs.minima.global/docs/run-a-node#desktop" target="_blank" rel="noopener" class="help-link" aria-label="Desktop install help" title="Desktop install help">&#x24D8;</a>
+                        </div>
+                        <p>Run Minima on Windows, Mac, or Linux using Open Web Start.</p>
+                        <div class="desktop-steps">
+                            <div class="desktop-step">
+                                <div class="desktop-step-number">1</div>
+                                <div class="desktop-step-content">
+                                    <p class="step-title">Install Open Web Start</p>
+                                    <p class="step-description">Download and run the Open Web Start installer with the default settings. This is required to run Minima on your desktop.</p>
+                                </div>
+                            </div>
+                            <a href="https://openwebstart.com/download/" class="btn" id="ows-download-btn" target="_blank" rel="noopener">Download Open Web Start</a>
+                            <br><br>
+                            <div class="desktop-step">
+                                <div class="desktop-step-number">2</div>
+                                <div class="desktop-step-content">
+                                    <p class="step-title">Install Minima</p>
+                                    <p class="step-description">Right-click the button below and select 'Save Link As...' to download the launcher. Once saved, double-click the file to install Minima.</p>
+                                </div>
+                            </div>
+                            <a href="https://www.spartacusrex.com/javaws/minima.jnlpx" download="minima.jnlpx" class="btn btn-secondary">Download Minima</a>
+                            <div class="security-info-container" style="text-align: right; margin-top: 10px;">
+                                <a href="#" id="security-info-toggle" style="font-size: 0.9rem; color: var(--text-dim); text-decoration: none;">Why am I seeing a security warning?</a>
+                                <div id="security-info-details" class="info" style="display: none; margin-top: 10px; text-align: left;">
+                                    <p><strong>Is Minima safe to install?</strong></p>
+                                    <p>When you launch Minima, you will likely see a security warning stating the publisher cannot be verified and that it will be granted unrestricted access to your computer. <strong>This is expected and the application is safe to run.</strong></p>
+                                    <ul style="padding-left: 20px; margin-top: 10px; font-size: 0.9rem;">
+                                        <li><strong>Why the warning?</strong> <br> This warning appears because the application uses a "self-signed certificate." This means the developer (Spartacus Rex) has signed the application themselves, rather than paying a large third-party company to do it.</li>
+                                        <li><strong>Why "unrestricted access"?</strong><br> Minima is a full blockchain node which requires limited access to the hard drive for processing transactions and blocks, and to save blockchain data to your computer.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="info">
-                    New to Minima? Check out the <a href="https://docs.minima.global/docs/run-a-node" target="_blank" rel="noopener">Getting Started Guide</a>
                 </div>
             </div>
 
             <div class="step">
-                <div class="step-number">2</div>
-                <h3>Set Up Your Node</h3>
-                <p>Once Minima is installed, you'll need to set up and sync your node:</p>
+                <div class="step-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="step-number">2</div>
+                        <h3>Set Up Your Node</h3>
+                    </div>
+                    <a href="https://docs.minima.global/docs/user-guides" target="_blank" rel="noopener" class="help-link" aria-label="Minima User Guides" title="Minima User Guides">&#x24D8;</a>
+                </div>
+                <p>Once Minima is running:</p>
                 
                 <ul>
-                    <li>Launch Minima and wait for initial sync</li>
-                    <li>Create a secure password for your node</li>
-                    <li>Back up your recovery phrase</li>
-                    <li>Wait for full blockchain synchronization</li>
+                    <li>If on desktop, click on the Settings tab and copy your "MDS password", then click on "Open MinimaOS" and login with this password</li>
+                    <li>Join the network - this will sync your node to the latest block</li>
+                    <li>Back up your recovery seed phrase - this can be found in the Security app</li>
                 </ul>
 
                 <div class="warning">
@@ -76,25 +117,29 @@
             </div>
 
             <div class="step">
-                <div class="step-number">3</div>
-                <h3>Install the V App</h3>
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3>Install the V App</h3>
+                </div>
                 <p>V is the decentralized social platform where you can interact with VITA.</p>
 
                 <ul>
                     <li>Open your Minima node</li>
-                    <li>Go to the MiniDAPP section</li>
-                    <li>Search for "V" in the available apps</li>
-                    <li>Click Install and follow the prompts</li>
+                    <li>Open the Dapp Store app</li>
+                    <li>Add our Dapp Store: Click the + in the top right and paste <a href="#" onclick="copyToClipboard('https://jazminima.github.io/dappstore/dapps.json'); return false;" style="color: var(--accent); text-decoration: underline; font-weight: 600; cursor: pointer;" id="dappstore-link">https://jazminima.github.io/dappstore/dapps.json</a> into the box, then click "Add Store"</li>
+                    <li>Open the store and install V</li>
                 </ul>
 
                 <div class="info">
-                    V is a decentralized app (MiniDAPP) that runs entirely on your Minima node, ensuring complete privacy and sovereignty.
+                    Future versions of V will be released to this Dapp Store. 
                 </div>
             </div>
 
             <div class="step">
-                <div class="step-number">4</div>
-                <h3>Meet VITA</h3>
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h3>Meet VITA</h3>
+                </div>
                 <p>Now you're ready to interact with VITA:</p>
 
                 <ul>

@@ -6,34 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let i = 0;
     
     function typeWriter() {
-        if (i < text.length) {
+        if (typingTextElement && i < text.length) {
             typingTextElement.innerHTML += text.charAt(i);
             i++;
-            setTimeout(typeWriter, 80);
+            setTimeout(typeWriter, 80); // Adjust speed here
         }
     }
     
-    if (typingTextElement) {
-        typeWriter();
-    }
+    typeWriter();
     
     // Create stars background
     const starsContainer = document.getElementById('stars');
-    const starsCount = 200;
-    
     if (starsContainer) {
+        const starsCount = 200;
+        
         for (let i = 0; i < starsCount; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
             
-            // Random position
             const x = Math.floor(Math.random() * window.innerWidth);
             const y = Math.floor(Math.random() * window.innerHeight);
-            
-            // Random size
             const size = Math.random() * 2;
-            
-            // Random animation delay
             const delay = Math.random() * 5;
             
             star.style.width = size + 'px';
@@ -48,20 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Create network visualization
     const networkContainer = document.getElementById('network');
-    const nodeCount = 15;
-    const nodes = [];
-    
     if (networkContainer) {
-        // Create nodes
+        const nodeCount = 15;
+        const nodes = [];
+        
         for (let i = 0; i < nodeCount; i++) {
             const circle = document.createElement('div');
             circle.classList.add('circle');
             
-            // Random position
             const x = Math.floor(Math.random() * window.innerWidth);
             const y = Math.floor(Math.random() * window.innerHeight);
-            
-            // Random size
             const size = Math.random() * 5 + 3;
             
             circle.style.width = size + 'px';
@@ -73,10 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             nodes.push({ element: circle, x, y, size });
         }
         
-        // Create connections between nodes
         for (let i = 0; i < nodes.length; i++) {
             for (let j = i + 1; j < nodes.length; j++) {
-                // Only connect some nodes (not all)
                 if (Math.random() > 0.7) continue;
                 
                 const connection = document.createElement('div');
@@ -87,11 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x2 = nodes[j].x;
                 const y2 = nodes[j].y;
                 
-                // Calculate distance and angle
                 const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
                 const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
                 
-                // Position and rotate
                 connection.style.width = distance + 'px';
                 connection.style.left = x1 + 'px';
                 connection.style.top = y1 + 'px';

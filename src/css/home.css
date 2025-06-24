@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,30 +132,31 @@
 }
 
 .typing-container {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
     margin-bottom: 40px;
     position: relative;
     z-index: 2;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 #typing-text {
-    display: inline-block;
-    margin-bottom: 0;
     font-size: 1.8rem;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     font-weight: 300;
+    display: inline-block;
 }
 
-.cursor-blink {
-    display: inline-block;
-    font-size: 2rem;
-    margin-bottom: 0;
-    margin-left: 2px;
-    animation: blink 1s step-end infinite;
+/* New pseudo-element cursor */
+#typing-text::after {
+    content: '_';
     color: var(--primary);
+    animation: blink 1s step-end infinite;
+    margin-left: 5px;
+}
+
+/* Remove the old, unused cursor style */
+.cursor-blink {
+    display: none;
 }
 
 @keyframes blink {
@@ -180,6 +181,11 @@
     position: relative;
     background: linear-gradient(135deg, rgba(30,30,60,0.2) 0%, transparent 100%);
     border-radius: 20px;
+}
+
+.manifesto-title {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .manifesto-text {
@@ -253,8 +259,9 @@
 }
 
 .feature h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--text);
     font-weight: 600;
 }
 
@@ -516,12 +523,30 @@
 }
 
 /* Responsive for home page */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 4.5rem;
+    }
+    .manifesto-title {
+        font-size: 2.5rem;
+    }
+    .feature h3 {
+        font-size: 1.4rem;
+    }
+    .cta h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: calc(100vh - 60px);
+    }
+    .hero h1 {
+        font-size: 3.5rem;
     }
     #typing-text {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
     .features {
         grid-template-columns: 1fr;
@@ -540,35 +565,53 @@
         transform: translateX(-50%);
     }
     .timeline-item {
-        width: 95%;
+        width: 80%;
         margin-bottom: 20px;
     }
+    .manifesto-title {
+        font-size: 2.2rem;
+    }
     .manifesto-text {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+    }
+    .feature h3 {
+        font-size: 1.3rem;
     }
     .mission-content {
-        padding: 10px;
+        padding: 20px;
     }
     .hero-btns {
         flex-direction: column;
         gap: 10px;
     }
+    .cta h2 {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .manifesto-title {
         font-size: 2rem;
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
     }
     .manifesto-text {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
     .timeline-item {
         padding: 10px;
     }
     .feature {
-        padding: 20px 10px;
+        padding: 30px 20px;
+    }
+    .feature h3 {
+        font-size: 1.2rem;
+    }
+    .cta h2 {
+        font-size: 2rem;
     }
 } 
