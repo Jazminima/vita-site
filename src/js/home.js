@@ -109,4 +109,28 @@ document.addEventListener('DOMContentLoaded', function() {
             missionContent.scrollIntoView({ behavior: 'smooth' });
         });
     }
+
+    // Make the beams follow the mouse
+    document.addEventListener('mousemove', function(e) {
+        const hero = document.querySelector('.hero');
+        const pulses = document.querySelectorAll('.pulse, .pulse2, .pulse3');
+        if (!hero || pulses.length === 0) return;
+
+        const rect = hero.getBoundingClientRect();
+        // Only update if mouse is over the hero section
+        if (
+            e.clientX < rect.left ||
+            e.clientX > rect.right ||
+            e.clientY < rect.top ||
+            e.clientY > rect.bottom
+        ) return;
+
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        pulses.forEach(pulse => {
+            pulse.style.left = `${x}%`;
+            pulse.style.top = `${y}%`;
+        });
+    });
 }); 

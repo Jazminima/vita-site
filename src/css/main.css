@@ -68,6 +68,11 @@ nav {
     letter-spacing: -1px;
 }
 
+a.logo, a.logo:hover {
+    text-decoration: none;
+    color: var(--primary);
+}
+
 .nav-links {
     display: flex;
     gap: 40px;
