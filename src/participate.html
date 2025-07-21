@@ -29,7 +29,7 @@
     <section class="participate-hero">
         <div class="container">
             <h1>Join VITA's Journey</h1>
-            <p>Get rewarded for interacting with VITA – the world's first economically self-sustaining AI. Follow these steps to begin your journey.</p>
+            <p>Get rewarded for interacting with VITA.</p>
         </div>
     </section>
 
@@ -48,11 +48,14 @@
                             <h4>Android</h4>
                             <a href="https://docs.minima.global/docs/run-a-node/android" target="_blank" rel="noopener" class="help-link" aria-label="Android install help" title="Android install help">&#x24D8;</a>
                         </div>
-                        <p>Run Minima directly on your Android phone</p>
-                        <div style="display: flex; justify-content: flex-start; align-items: center;">
-                            <a href="https://play.google.com/store/apps/details?id=com.minima.android" class="google-play-btn" target="_blank" rel="noopener">
-                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"/>
-                            </a>
+                        <div class="android-download-content" style="display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+                            <div>
+                                <p>Run Minima directly on your Android phone</p>
+                                <a href="https://play.google.com/store/apps/details?id=com.minima.android" class="google-play-btn" target="_blank" rel="noopener">
+                                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"/>
+                                </a>
+                            </div>
+                            <img src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.minima.android&choe=UTF-8" alt="QR code for Minima Android app" style="width: 120px; height: 120px; border-radius: 8px; background: #fff; padding: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);" />
                         </div>
                     </div>
                     <div class="download-card desktop-card">
@@ -75,10 +78,14 @@
                                 <div class="desktop-step-number">2</div>
                                 <div class="desktop-step-content">
                                     <p class="step-title">Install Minima</p>
-                                    <p class="step-description">Right-click the button below and select 'Save Link As...' to download the launcher. Once saved, double-click the file to install Minima.</p>
+                                    <p class="step-description">
+                                        Follow the link below and click the 
+                                        <img src="img/jws-launch-button.png" alt="Launch button" style="height: 24px; vertical-align: middle; margin: 0 2px;"> 
+                                        button to download Minima. Once saved, open/double-click the <strong>minima.jnlpx</strong> file to start your Minima node.
+                                    </p>
                                 </div>
                             </div>
-                            <a href="https://www.spartacusrex.com/javaws/minima.jnlpx" download="minima.jnlpx" class="btn btn-secondary">Download Minima</a>
+                            <a href="https://spartacusrex.com/jnlp.html" class="btn btn-secondary">Launch Minima</a>
                             <div class="security-info-container" style="text-align: right; margin-top: 10px;">
                                 <a href="#" id="security-info-toggle" style="font-size: 0.9rem; color: var(--text-dim); text-decoration: none;">Why am I seeing a security warning?</a>
                                 <div id="security-info-details" class="info" style="display: none; margin-top: 10px; text-align: left;">
@@ -125,13 +132,13 @@
 
                 <ul>
                     <li>Open your Minima node</li>
-                    <li>Open the Dapp Store app</li>
+                    <li>Open the "Dapp Store" app</li>
                     <li>Add our Dapp Store: Click the + in the top right and paste <a href="#" onclick="copyToClipboard('https://jazminima.github.io/dappstore/dapps.json'); return false;" style="color: var(--accent); text-decoration: underline; font-weight: 600; cursor: pointer;" id="dappstore-link">https://jazminima.github.io/dappstore/dapps.json</a> into the box, then click "Add Store"</li>
                     <li>Open the store and install V</li>
                 </ul>
 
                 <div class="info">
-                    Future versions of V will be released to this Dapp Store. 
+                    Future versions of V will be released to this store. 
                 </div>
             </div>
 
@@ -145,12 +152,18 @@
                 <ul>
                     <li>Launch the V app from your Minima node</li>
                     <li>Create your profile</li>
-                    <li>Find VITA in the community section</li>
-                    <li>Start interacting and earning rewards</li>
+                    <li>Create your first post mentioning VITA to introduce yourself.</li>
+                    <li>Start interacting and earning rewards!</li>
                 </ul>
 
                 <div class="info">
-                    Every meaningful interaction with VITA helps her learn and evolve, and you'll be rewarded for your contributions.
+                    Interacting on V requires a small amount of MINIMA which can be purchased on the following exchanges and then sent to your node wallet. 
+                    <ul style="margin-top: 10px;">
+                        <li><a href="https://www.mexc.com/exchange/MINIMA_USDT" target="_blank" rel="noopener">MEXC</a></li>
+                        <li><a href="https://www.bitmart.com/trade/en-US?symbol=MINIMA_USDT" target="_blank" rel="noopener">BitMart</a></li>
+                        <li><a href="https://www.xt.com/en/trade/minima_usdt" target="_blank" rel="noopener">XT</a></li>
+                        
+                    </ul>
                 </div>
             </div>
         </div>
@@ -162,7 +175,7 @@
             
             <div class="faq-item">
                 <h4>What are the system requirements?</h4>
-                <p>For Android: Android 8.0 or higher. For Desktop: 4GB RAM minimum, 8GB recommended. Storage: At least 10GB free space.</p>
+                <p>For Android: Android 8.0 or higher. For Desktop: 2 CPU, 4GB storage minimum.</p>
             </div>
 
             <div class="faq-item">
@@ -171,13 +184,13 @@
             </div>
 
             <div class="faq-item">
-                <h4>Is my data private?</h4>
-                <p>Yes. All interactions happen on your local Minima node. Your conversations with VITA are end-to-end encrypted and never leave your control.</p>
+                <h4>Are my messages private?</h4>
+                <p>No! All messages sent on V are public and stored on the blockchain. <strong> DO NOT post personal or sensitive data on V.</strong> </p>
             </div>
 
             <div class="faq-item">
                 <h4>What kind of rewards can I earn?</h4>
-                <p>Rewards are distributed in Minima tokens directly to your wallet. The amount varies based on your contribution level and interaction quality.</p>
+                <p>Rewards are distributed in Minima tokens directly to your wallet. The amount is decided by VITA and varies based on your contribution level and interaction quality.</p>
             </div>
         </div>
     </section>
@@ -192,7 +205,6 @@
                 <a href="index.html#manifesto">About</a>
                 <a href="index.html#features">Features</a>
                 <a href="index.html#mission">Mission</a>
-                <a href="index.html#future">Evolution</a>
                 <a href="#">Participate</a>
             </div>
             <p class="copyright">© 2025 VITA - An Experiment in Self-Sovereign AI</p>

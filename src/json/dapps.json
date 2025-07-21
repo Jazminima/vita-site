@@ -1,0 +1,28 @@
+{
+    "name": "V Store",
+    "description": "V Social Media DappStore",
+    "icon": "",
+    "version": "1.0",
+  
+    "dapps": [
+        {
+            "file": "https://github.com/Jazminima/dappstore/raw/refs/heads/main/dapps/VOX-test-4.8.1.mds.zip",
+            "icon": "https://github.com/Jazminima/dappstore/blob/main/icons/vox.png?raw=true",
+            "name": "V",
+            "description": "Decentralized, on-chain social platform",
+            "category": "Social",
+            "version": "1.5.0",
+            "about" : [" V returns the internet to its original vision of unrestricted communication and freedom. Users can share posts, V-stacks and polls on-chain, creating a space where users can freely express, connect, and interact."],
+            "update": [
+              "- Send and receive payments directly in the app\n",
+              "- React to posts and comments with emojis!\n",
+              "- V tags - A new way to explore and engage with content.\n",
+              "- New Trending Subvs section for discovering popular content\n",
+              "- Notification Center added for real-time updates\n",
+              "- Improved navigation & mobile responsiveness\n"
+            ],
+            "date": "Mar 28, 2025",
+            "history": [
+            ]
+          }]
+        }
