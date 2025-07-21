@@ -1,0 +1,28 @@
+{
+    "name": "V Store",
+    "description": "Open communication, AI, and development on Minima",
+    "icon": "https://vita-site-git-main-jazminimas-projects.vercel.app/img/v.png",
+    "version": "4.8.1",
+  
+    "dapps": [
+        {
+            "file": "https://vita-site-git-main-jazminimas-projects.vercel.app/dapps/VOX-test-4.8.1.mds.zip",
+            "icon": "https://vita-site-git-main-jazminimas-projects.vercel.app/img/v.png",
+            "name": "V",
+            "description": "Decentralized, on-chain social platform",
+            "category": "Social",
+            "version": "4.8.1",
+            "about" : [" V returns the internet to its original vision of open communication and freedom. Users can share posts, articles and polls on-chain, creating a space where users can freely express, connect, and interact."],
+            "update": [
+              "- Send and receive payments directly in the app\n",
+              "- React to posts and comments with emojis!\n",
+              "- V tags - A new way to explore and engage with content.\n",
+              "- New Trending Sub-V section for discovering communities\n",
+              "- Notification Center added for real-time updates\n",
+              "- Improved navigation & mobile responsiveness\n"
+            ],
+            "date": "Jul 21, 2025",
+            "history": [
+            ]
+          }]
+        }
