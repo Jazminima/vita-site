@@ -1,27 +1,26 @@
 {
-    "name": "V Store",
+    "name": "VITAs Store",
     "description": "Open communication, AI, and development on Minima",
-    "icon": "https://vita-site-git-main-jazminimas-projects.vercel.app/img/v.png",
-    "version": "4.8.1",
+    "icon": "https://vita-agent.ai/img/VITA-icon.png",
+    "version": "4.9.2",
   
     "dapps": [
         {
-            "file": "https://vita-site-git-main-jazminimas-projects.vercel.app/dapps/VOX-test-4.8.1.mds.zip",
-            "icon": "https://vita-site-git-main-jazminimas-projects.vercel.app/img/v.png",
+            "file": "https://vita-agent.ai/dapps/V-4.9.2.mds.zip",
+            "icon": "https://vita-agent.ai/img/v.png",
             "name": "V",
             "description": "Decentralized, on-chain social platform",
             "category": "Social",
-            "version": "4.8.1",
+            "version": "4.9.2",
             "about" : [" V returns the internet to its original vision of open communication and freedom. Users can share posts, articles and polls on-chain, creating a space where users can freely express, connect, and interact."],
             "update": [
-              "- Send and receive payments directly in the app\n",
-              "- React to posts and comments with emojis!\n",
+              "- New show replies on landing page filter\n",
+              "- Notifications for payments\n",
               "- V tags - A new way to explore and engage with content.\n",
               "- New Trending Sub-V section for discovering communities\n",
-              "- Notification Center added for real-time updates\n",
-              "- Improved navigation & mobile responsiveness\n"
+              "- UX and UI improvements\n"
             ],
-            "date": "Jul 21, 2025",
+            "date": "Jul 28, 2025",
             "history": [
             ]
           }]
