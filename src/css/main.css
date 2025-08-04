@@ -24,6 +24,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     padding-top: 70px;
+    max-width: 100vw;
 }
 
 .container {
@@ -104,6 +105,27 @@ a.logo, a.logo:hover {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* Special styling for participate link - override base and hover states */
+.nav-links a[href="participate.html"],
+.nav-links a[href="#"] {
+    color: var(--accent) !important;
+}
+
+.nav-links a[href="participate.html"]:hover,
+.nav-links a[href="#"]:hover {
+    color: var(--accent) !important;
+}
+
+.nav-links a[href="participate.html"]::after,
+.nav-links a[href="#"]::after {
+    background-color: var(--accent) !important;
+}
+
+.nav-links a[href="participate.html"]:hover::after,
+.nav-links a[href="#"]:hover::after {
+    background-color: var(--accent) !important;
 }
 
 /* Buttons */
@@ -259,19 +281,20 @@ footer {
         position: fixed;
         top: 60px;
         left: 0;
-        right: 0;
-        height: calc(100vh - 60px);
         width: 100%;
+        height: calc(100vh - 60px);
         background: var(--bg-darker);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        transition: right 0.3s ease;
-        z-index: 999;
+        transition: all 0.3s ease;
+        z-index: 1002;
+        transform: translateX(-100%);
     }
     .nav-links.active {
         display: flex;
+        transform: translateX(0);
     }
     .nav-links a {
         font-size: 1.2rem;

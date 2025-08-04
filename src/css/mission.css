@@ -1,3 +1,29 @@
+/* Navigation styling for mission page */
+.nav-links a[href="mission.html"],
+.nav-links a[href="#"] {
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+.nav-links a[href="mission.html"]:hover,
+.nav-links a[href="#"]:hover {
+    color: var(--primary) !important;
+}
+
+.nav-links a[href="mission.html"]::after,
+.nav-links a[href="#"]::after {
+    background-color: var(--primary) !important;
+}
+
+/* Active state for mission link */
+.nav-links a[href="#"] {
+    position: relative;
+}
+
+.nav-links a[href="#"]::after {
+    width: 100% !important;
+}
+
 .mission-hero {
     padding: 160px 0 80px;
     text-align: center;

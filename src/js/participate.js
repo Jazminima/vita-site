@@ -3,6 +3,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add any participate page specific functionality here
     // For example, smooth scrolling to sections, form validation, etc.
     
+    // Installation path selection
+    window.showNewUserPath = function() {
+        // Update button states
+        document.getElementById('new-user-btn').classList.add('active');
+        document.getElementById('existing-user-btn').classList.remove('active');
+        
+        // Show all steps
+        document.querySelectorAll('.new-user-step').forEach(step => {
+            step.style.display = 'block';
+        });
+        document.querySelectorAll('.all-user-step').forEach(step => {
+            step.style.display = 'block';
+        });
+        
+        // Update step numbers for all-user steps
+        document.querySelectorAll('.new-user-number').forEach(num => {
+            num.style.display = 'block';
+        });
+        document.querySelectorAll('.existing-user-number').forEach(num => {
+            num.style.display = 'none';
+        });
+    };
+    
+    window.showExistingUserPath = function() {
+        // Update button states
+        document.getElementById('existing-user-btn').classList.add('active');
+        document.getElementById('new-user-btn').classList.remove('active');
+        
+        // Hide new user steps, show all user steps
+        document.querySelectorAll('.new-user-step').forEach(step => {
+            step.style.display = 'none';
+        });
+        document.querySelectorAll('.all-user-step').forEach(step => {
+            step.style.display = 'block';
+        });
+        
+        // Update step numbers for all-user steps
+        document.querySelectorAll('.new-user-number').forEach(num => {
+            num.style.display = 'none';
+        });
+        document.querySelectorAll('.existing-user-number').forEach(num => {
+            num.style.display = 'block';
+        });
+    };
+    
     // Copy to clipboard function
     window.copyToClipboard = function(text) {
         navigator.clipboard.writeText(text).then(function() {

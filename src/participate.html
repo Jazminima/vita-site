@@ -7,6 +7,50 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/participate.css">
     <link rel="icon" type="image/png" href="img/VITA.png">
+    <style>
+        /* Force participate link to be green on hover */
+        .nav-links a[href="#"]:hover,
+        .nav-links a[href="participate.html"]:hover {
+            color: #36EACC !important;
+        }
+        .nav-links a[href="#"]:hover::after,
+        .nav-links a[href="participate.html"]:hover::after {
+            background-color: #36EACC !important;
+            width: 100% !important;
+        }
+    </style>
+    <script>
+        // Force participate link to be green on hover using JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const participateLinks = document.querySelectorAll('.nav-links a[href="participate.html"], .nav-links a[href="#"]');
+            
+            participateLinks.forEach(link => {
+                // Add a style tag to override the ::after pseudo-element
+                const style = document.createElement('style');
+                style.textContent = `
+                    .nav-links a[href="${link.getAttribute('href')}"]:hover::after {
+                        background-color: #36EACC !important;
+                    }
+                    .nav-links a[href="${link.getAttribute('href')}"]::after {
+                        background-color: #36EACC !important;
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                link.addEventListener('mouseenter', function() {
+                    this.style.color = '#36EACC';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    if (this.getAttribute('href') === '#') {
+                        this.style.color = '#36EACC'; // Keep green if on participate page
+                    } else {
+                        this.style.color = ''; // Reset to default
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Header with navigation -->
@@ -20,7 +64,7 @@
                 <div class="nav-links" id="navLinks">
                     <a href="index.html#manifesto">About</a>
                     <a href="index.html#features">Features</a>
-                    <a href="index.html#mission">Mission</a>
+                    <a href="mission.html">Mission</a>
                     <a href="#" style="color: var(--accent); font-weight: 600;">Participate</a>
                 </div>
             </nav>
@@ -34,9 +78,39 @@
         </div>
     </section>
 
+    <!-- Installation Type Selector -->
+    <section class="installation-selector">
+        <div class="container">
+            <div class="selector-content">
+                <h3>Choose your setup path:</h3>
+                <div class="selector-buttons">
+                    <button class="selector-btn active" id="new-user-btn" onclick="showNewUserPath()">
+                        <div class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                <path d="M19 15L19.74 17.74L22.5 18.5L19.74 19.26L19 22L18.26 19.26L15.5 18.5L18.26 17.74L19 15Z" fill="currentColor"/>
+                                <path d="M5 6L5.5 7.5L7 8L5.5 8.5L5 10L4.5 8.5L3 8L4.5 7.5L5 6Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="btn-text">I'm new to Minima</span>
+                    </button>
+                    <button class="selector-btn" id="existing-user-btn" onclick="showExistingUserPath()">
+                        <div class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5L15 12L8 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 5L22 12L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="btn-text">I already have a Minima node</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="installation-steps">
         <div class="container">
-            <div class="step">
+            <div class="step new-user-step" id="step-1">
                 <div class="step-header">
                     <div class="step-number">1</div>
                     <h3>Download Minima</h3>
@@ -47,7 +121,13 @@
                     <div class="download-card">
                         <div class="download-card-header" style="display: flex; justify-content: space-between; align-items: center;">
                             <h4>Android</h4>
-                            <a href="https://docs.minima.global/docs/run-a-node/android" target="_blank" rel="noopener" class="help-link" aria-label="Android install help" title="Android install help">&#x24D8;</a>
+                            <a href="https://docs.minima.global/docs/run-a-node/android" target="_blank" rel="noopener" class="help-link" aria-label="Android install help" title="Android install help">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                                </svg>
+                            </a>
                         </div>
                         <div class="android-download-content" style="display: flex; align-items: center; justify-content: space-between; gap: 24px;">
                             <div>
@@ -62,7 +142,13 @@
                     <div class="download-card desktop-card">
                         <div class="download-card-header" style="display: flex; justify-content: space-between; align-items: center;">
                             <h4>Desktop</h4>
-                            <a href="https://docs.minima.global/docs/run-a-node#desktop" target="_blank" rel="noopener" class="help-link" aria-label="Desktop install help" title="Desktop install help">&#x24D8;</a>
+                            <a href="https://docs.minima.global/docs/run-a-node#desktop" target="_blank" rel="noopener" class="help-link" aria-label="Desktop install help" title="Desktop install help">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                                </svg>
+                            </a>
                         </div>
                         <p>Run Minima on Windows, Mac, or Linux using Open Web Start.</p>
                         <div class="desktop-steps">
@@ -103,13 +189,19 @@
                 </div>
             </div>
 
-            <div class="step">
+            <div class="step new-user-step" id="step-2">
                 <div class="step-header" style="display: flex; justify-content: space-between; align-items: center;">
                     <div style="display: flex; align-items: center; gap: 12px;">
                         <div class="step-number">2</div>
                         <h3>Set Up Your Node</h3>
                     </div>
-                    <a href="https://docs.minima.global/docs/user-guides" target="_blank" rel="noopener" class="help-link" aria-label="Minima User Guides" title="Minima User Guides">&#x24D8;</a>
+                    <a href="https://docs.minima.global/docs/user-guides" target="_blank" rel="noopener" class="help-link" aria-label="Minima User Guides" title="Minima User Guides">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                        </svg>
+                    </a>
                 </div>
                 <p>Once Minima is running:</p>
                 
@@ -124,9 +216,10 @@
                 </div>
             </div>
 
-            <div class="step">
+            <div class="step all-user-step" id="step-3">
                 <div class="step-header">
-                    <div class="step-number">3</div>
+                    <div class="step-number new-user-number">3</div>
+                    <div class="step-number existing-user-number" style="display: none;">1</div>
                     <h3>Install the V App</h3>
                 </div>
                 <p>V is the decentralized social platform where you can interact with VITA.</p>
@@ -143,9 +236,10 @@
                 </div>
             </div>
 
-            <div class="step">
+            <div class="step all-user-step" id="step-4">
                 <div class="step-header">
-                    <div class="step-number">4</div>
+                    <div class="step-number new-user-number">4</div>
+                    <div class="step-number existing-user-number" style="display: none;">2</div>
                     <h3>Meet VITA</h3>
                 </div>
                 <p>Now you're ready to interact with VITA:</p>
