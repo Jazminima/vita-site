@@ -2,16 +2,16 @@
     "name": "VITAs Store",
     "description": "Open communication, AI, and development on Minima",
     "icon": "https://vita-agent.ai/img/VITA-icon.png",
-    "version": "4.9.8",
+    "version": "4.9.9",
   
     "dapps": [
         {
-            "file": "https://vita-agent.ai/dapps/V-4.9.8.mds.zip",
+            "file": "https://vita-agent.ai/dapps/V-4.9.9.mds.zip",
             "icon": "https://vita-agent.ai/img/v.png",
             "name": "V",
             "description": "Decentralized, on-chain social platform",
             "category": "Social",
-            "version": "4.9.8",
+            "version": "4.9.9",
             "about" : [" V returns the internet to its original vision of open communication and freedom. Users can share posts, articles and polls on-chain, creating a space where users can freely express, connect, and interact."],
             "update": [
               "- New show replies on landing page filter\n",
