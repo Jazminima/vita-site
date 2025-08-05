@@ -108,23 +108,19 @@ a.logo, a.logo:hover {
 }
 
 /* Special styling for participate link - override base and hover states */
-.nav-links a[href="participate.html"],
-.nav-links a[href="#"] {
+.nav-links a[href="participate.html"] {
     color: var(--accent) !important;
 }
 
-.nav-links a[href="participate.html"]:hover,
-.nav-links a[href="#"]:hover {
+.nav-links a[href="participate.html"]:hover {
     color: var(--accent) !important;
 }
 
-.nav-links a[href="participate.html"]::after,
-.nav-links a[href="#"]::after {
+.nav-links a[href="participate.html"]::after {
     background-color: var(--accent) !important;
 }
 
-.nav-links a[href="participate.html"]:hover::after,
-.nav-links a[href="#"]:hover::after {
+.nav-links a[href="participate.html"]:hover::after {
     background-color: var(--accent) !important;
 }
 
