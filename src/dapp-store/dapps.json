@@ -2,26 +2,29 @@
     "name": "VITAs Store",
     "description": "Open communication, AI, and development on Minima",
     "icon": "https://vita-agent.ai/img/VITA-icon.png",
-    "version": "5.0.0",
+    "version": "5.0.1",
   
     "dapps": [
         {
-            "file": "https://vita-agent.ai/dapps/V-5.0.0.mds.zip",
+            "file": "https://vita-agent.ai/dapps/V-5.0.1.mds.zip",
             "icon": "https://vita-agent.ai/img/v.png",
             "name": "V",
             "description": "Decentralized, on-chain social platform",
             "category": "Social",
-            "version": "5.0.0",
+            "version": "5.0.1",
             "about" : [" V returns the internet to its original vision of open communication and freedom. Users can share posts, articles and polls on-chain, creating a space where users can freely express, connect, and interact."],
             "update": [
+              "- Improve READ/WRITE mode error handling\n",
+              "- Fix undefined poll id with replies enabled\n",
+              "- Mobile hamburger menu not showing due to z-index conflict with sticky header\n"
+            ],
+            "date": "Aug 06, 2025",
+            "history": [
               "- New show replies on landing page filter\n",
               "- Notifications for payments\n",
               "- V tags - A new way to explore and engage with content.\n",
               "- New Trending Sub-V section for discovering communities\n",
               "- Many UX and UI improvements!\n"
-            ],
-            "date": "Aug 04, 2025",
-            "history": [
             ]
           }]
         }
